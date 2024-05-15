@@ -10,9 +10,9 @@ w, h, fps = (int(cap.get(x)) for x in (cv2.CAP_PROP_FRAME_WIDTH, cv2.CAP_PROP_FR
 
 #Хэрэглэгч өөрийн дата дээр туршихыг хүсвэл
 # model = YOLO("yolov8n.pt")
-# cap = cv2.VideoCapture("test.mp4")
+# cap = cv2.VideoCapture("test2.mp4")
 # assert cap.isOpened(), "Error reading video file"
-# w, h, fps = (int(cap.get(x)) for x in (cv2.CAP_PROP_FRAME_WIDTH, cv2.CAP_PROP_FRAME_HEIGHT, cv2.CAP_PROP_FPS))
+# w, h, fps = (int(cap.get(x)) for x in (cv2.CAP_PROP_FRAMEd_WIDTH, cv2.CAP_PROP_FRAME_HEIGHT, cv2.CAP_PROP_FPS))
 
 line_points = [(20, 400), (1080, 400)]
 
@@ -24,7 +24,7 @@ customname = {0: 'hvn'}
 counter = object_counter.ObjectCounter()
 counter.set_args(view_img=True,
                  reg_pts=line_points,
-                 classes_names=model.names,
+                 classes_names=customname,
                  draw_tracks=True)
 
 while cap.isOpened():
